@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rs_background"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginLeft="156dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/rs_touxiang" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="126dp"
+            android:gravity="center"
+            android:text="注册"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_nichen"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="昵称 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/ResetPassName"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请输入您的用户名"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_nichen"
+            android:layout_toEndOf="@+id/text_nichen" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_zhanghao"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="账号 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/ResetPassword"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_zhanghao"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请输入您的用户ID"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_mima"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="密码 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/OldPassword"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_mima"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请输入您的密码"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_querenmima"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="确认 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/NewPassword"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_querenmima"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的密码"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_xingbie"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="性别 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <!--<EditText-->
+        <!--android:id="@+id/sex"-->
+        <!--android:layout_width="240dp"-->
+        <!--android:layout_height="32dp"-->
+        <!--android:layout_marginLeft="16dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:layout_toRightOf="@+id/text_xingbie"-->
+        <!--android:background="@drawable/circle"-->
+        <!--android:gravity="center"-->
+        <!--android:hint="请确认你的性别"-->
+        <!--android:inputType="textPersonName"-->
+        <!--android:textSize="20dp" />-->
+        <RadioGroup
+            android:id="@+id/sex_select"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@+id/text_xingbie"
+            android:layout_width="240dp"
+            android:layout_height="42dp">
+            <RadioButton
+                android:id="@+id/rs_man"
+                android:layout_width="120dp"
+                android:layout_height="32dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="24dp"
+                android:text="男"/>
+            <RadioButton
+                android:id="@+id/rs_women"
+                android:layout_width="120dp"
+                android:layout_height="32dp"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/rs_man"
+                android:layout_marginTop="8dp"
+                android:text="女"/>
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_telephone"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="电话 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/telephone"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_telephone"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的电话"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginTop="4dp">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_age"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="生日 :"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textSize="20dp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/Age"-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_toRightOf="@+id/text_age"-->
+            <!--android:background="@drawable/circle"-->
+            <!--android:gravity="center"-->
+            <!--android:hint="请确认你的年纪"-->
+            <!--android:inputType="textPersonName"-->
+            <!--android:textSize="20dp" />-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/text_email"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="邮箱 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_email"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的邮箱"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:layout_marginTop="4dp">-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/text_address"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_marginLeft="8dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:gravity="center"-->
+            <!--android:text="地址 :"-->
+            <!--android:textColor="#FFFFFF"-->
+            <!--android:textSize="20dp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/address"-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="32dp"-->
+            <!--android:layout_marginLeft="16dp"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_toRightOf="@+id/text_address"-->
+            <!--android:background="@drawable/circle"-->
+            <!--android:gravity="center"-->
+            <!--android:hint="请确认你的地址"-->
+            <!--android:inputType="textPersonName"-->
+            <!--android:textSize="20dp" />-->
+    <!--</RelativeLayout>-->
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="15dp">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/circle"
+            android:id="@+id/Sure"
+            android:text="确认"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:background="@drawable/circle"
+            android:id="@+id/Cancel"
+            android:layout_marginLeft="210dp"
+            android:layout_marginTop="16dp"
+            android:text="取消"/>
+    </RelativeLayout>
+
+</LinearLayout>
