@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/background_gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/background_white">
+
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="24dp"
+            android:id="@+id/info_back"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/info_back"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/info_text_back"
+            android:text="返回"
+            android:textSize="24dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/text_black"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/info_fanhui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="编辑资料"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:textColor="@color/text_black"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/zhanghao"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     账号"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/exit_info_ID"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/zhanghao"
+            android:layout_toRightOf="@+id/zhanghao" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/nichen"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     昵称"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+        <EditText
+            android:id="@+id/exit_info_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/nichen"
+            android:layout_toRightOf="@+id/nichen"
+            android:textColor="@color/text_black"
+            android:textSize="20dp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mylife_xiantiao2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/xingbie"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     性别"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+        <Spinner
+            android:id="@+id/spin_sex"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:entries="@array/sp_sex"
+            android:layout_marginLeft="160dp">
+       </Spinner>
+        <!--<EditText-->
+            <!--android:id="@+id/exit_info_sex"-->
+            <!--android:textColor="@color/text_black"-->
+            <!--android:textSize="20dp"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_marginLeft="100dp"-->
+            <!--android:layout_marginStart="80dp"-->
+            <!--android:layout_toEndOf="@+id/xingbie"-->
+            <!--android:layout_toRightOf="@+id/xingbie" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/dianhua"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     电话"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+        <EditText
+            android:id="@+id/exit_info_telephone"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/dianhua"
+            android:layout_toRightOf="@+id/dianhua" />
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mylife_xiantiao2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/youxiang"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:text="     邮箱"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+        <EditText
+            android:id="@+id/exit_info_email"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/youxiang"
+            android:layout_toRightOf="@+id/youxiang" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/kefu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     客服"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

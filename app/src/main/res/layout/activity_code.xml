@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        >
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="24dp"
+            android:id="@+id/code_back"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/code_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="返回"
+            android:textSize="24dp"
+            android:id="@+id/code_text_back"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/background_white"
+            android:gravity="center_vertical"/>
+        <TextView
+            android:id="@+id/info_fanhui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="我的二维码"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@color/background_white"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:text="个人管理中心"
+        android:textColor="@color/gray"
+        android:textSize="24dp"
+        android:background="@color/background_gray"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:background="@color/background_white"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:background="@drawable/erweima" />
+    </LinearLayout>
+</LinearLayout>

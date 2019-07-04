@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@drawable/searchback">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id = "@+id/search_liner"
+       >
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_weight="0.76"
+            android:hint="请输入查找内容"
+            android:theme="@style/MyEditText"
+            android:background="@drawable/editshape"
+            android:layout_marginLeft="16dp"/>
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/search" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/notes_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>

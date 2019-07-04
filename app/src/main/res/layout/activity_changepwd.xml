@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/change_background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/change_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="用户账号 :"
+            android:textColor="#87FFFFFF"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/change_exit_id"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@+id/change_ID"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/change_oldmima"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="旧的密码 :"
+            android:textColor="#87FFFFFF"
+            android:textSize="24dp"
+            />
+
+        <EditText
+            android:id="@+id/change_oldpwd"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="14dp"
+            android:layout_toRightOf="@+id/change_oldmima"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:inputType="textPassword"
+            android:hint="请输入您的密码"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/change_newmima"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="新的密码 :"
+            android:textColor="#87FFFFFF"
+            android:textSize="24dp"
+            android:layout_marginTop="8dp"/>
+
+        <EditText
+            android:id="@+id/change_newpwd"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/change_newmima"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请输入您的密码"
+            android:inputType="textPassword"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/change_sure_mima"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="确认密码 :"
+            android:textColor="#87FFFFFF"
+            android:textSize="24dp" />
+
+        <EditText
+            android:id="@+id/change_sure_pwd"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/change_sure_mima"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的密码"
+            android:inputType="textPassword"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:textSize="24dp"
+            android:background="@drawable/circle"
+            android:id="@+id/change_Sure"
+            android:text="确认"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle"
+            android:id="@+id/change_Cancel"
+            android:textSize="24dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="16dp"
+            android:text="取消"/>
+    </RelativeLayout>
+
+</LinearLayout>

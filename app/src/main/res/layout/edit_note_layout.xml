@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#363636">
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:src="@drawable/arrow_back"
+                android:id="@+id/edit_cancle"
+                android:background="#00000000"/>
+            <TextView
+                android:layout_width="216dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@+id/edit_cancle"
+                android:gravity="center"
+                android:paddingLeft="48dp"
+                android:text="修改收支"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:id="@+id/schedule_title"/>
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/schedule_title"
+                android:src="@drawable/delete"
+                android:id="@+id/edit_delete"
+                android:background="#00000000"/>
+            <ImageButton
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_toRightOf="@id/edit_delete"
+                android:src="@drawable/arrows_check"
+                android:id="@+id/edit_save"
+                android:background="#00000000"/>
+        </RelativeLayout>
+        <EditText
+            android:id="@+id/edit_money"
+            android:layout_width="328dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="left"
+            android:inputType="numberDecimal"
+            android:text="0.00"
+            android:textColor="#ff0000"
+            android:textSize="48sp"
+            android:selectAllOnFocus="true"/>
+
+        <TextView
+            android:layout_width="328dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center|left"
+            android:text="账户类型"
+            android:textSize="12sp"
+            android:textColor="#87ffffff"/>
+
+        <TextView
+            android:layout_width="324dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center|left"
+            android:text="现金账户"
+            android:textColor="#54ffffff"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spin_income"
+            android:layout_width="328dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:background="#27ffffff"
+            android:entries="@array/spingarr"></Spinner>
+
+        <EditText
+            android:id="@+id/edit_notes"
+            android:layout_width="328dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:gravity="center|left"
+            android:hint="备注..."
+            android:selectAllOnFocus="true"
+            android:textColor="#87FFFFFF"
+            android:textColorHint="#54FFFFFF"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:orientation="horizontal">
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

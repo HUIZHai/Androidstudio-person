@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/act_title"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:layout_gravity="left|center"
+            android:layout_marginLeft="16dp"
+            android:text="开始时间"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="24dp"
+            android:text="2019年7月4日"
+            android:textColor="#FFFFFF"
+            android:layout_toRightOf="@+id/act_title"
+            android:layout_marginLeft="80dp"
+            android:textSize="16sp"
+            android:gravity="right|center"
+            android:id="@+id/act_time"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toRightOf="@+id/act_time"
+            android:src="@drawable/to"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/to"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

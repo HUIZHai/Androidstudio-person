@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="0.08"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:id="@+id/shedule_title">
+
+            <TextView
+                android:id="@+id/schedule_list_title"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="今天"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/schedule_list_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2017/7/2"
+                android:textColor="#87FFFFFF"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_toRightOf="@+id/shedule_title"
+            android:src="@drawable/to"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/to"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
