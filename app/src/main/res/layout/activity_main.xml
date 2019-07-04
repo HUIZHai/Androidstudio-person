@@ -1,6 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.hyl.person.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/content1"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:background="@drawable/moneyback">
+
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:layout_width="328dp"
+                android:layout_height="160dp"
+                android:id="@+id/rl1"
+                android:background="@drawable/editshape5">
+
+                <TextView
+                    android:id="@+id/currentMonth"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="24dp"
+                    android:text="7月"
+                    android:textColor="@color/color_white"
+                    android:background="@drawable/editshape4"
+                    android:paddingLeft="16dp"
+                    android:textSize="28sp" />
+
+                <TextView
+                    android:id="@+id/incomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/currentMonth"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="收入总额:"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/income"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/currentMonth"
+                    android:layout_toRightOf="@+id/incomeText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="0.00"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/outcomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/incomeText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="支出总额:"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/outcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/incomeText"
+                    android:layout_toRightOf="@+id/outcomeText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="0.00"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/balanceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/outcomeText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="余        额:"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/outcomeText"
+                    android:layout_toRightOf="@+id/balanceText"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:text="0.00"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp" />
+                <ArcProcess.ArcProgress
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:radius="50dp"
+                    app:arcCapRound="true"
+                    app:degree="45"
+                    app:progressStyle="tick"
+                    app:progressColor="#29AB9E"
+                    app:unprogresColor="#F05A4A"
+                    app:tickDensity="3"
+                    android:gravity="center"
+                    android:layout_marginLeft="40dp"
+                    android:progress="50"
+                    android:layout_toRightOf="@id/income"
+                    android:layout_below="@+id/currentMonth"
+                    android:id="@+id/moneyprocess"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="328dp"
+                android:layout_height="56dp"
+                android:background="@drawable/editshape5"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_below="@+id/rl1">
+                <Button
+                    android:layout_width="312dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="28sp"
+                    android:text="记一笔"
+                    android:background="#87878787"
+                    android:textColor="#ffffff"
+                    android:id="@+id/makeNotes"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/in_outcome_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">/>
+        </ListView>
+
+    </LinearLayout>
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/content2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:background="@drawable/calback">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="328dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:text="今日没有日程"
+                android:layout_marginLeft="16dp"
+                android:gravity="center"
+                android:id="@+id/schedule_info"
+                android:textColor="#87000000"
+                android:visibility="visible"/>
+            <ListView
+                android:layout_marginTop="8dp"
+                android:id="@+id/day_schedule"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="#54FFFFFF"
+                android:dividerHeight="1dp"
+                android:visibility="gone">/>
+            </ListView>
+        </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </android.support.design.widget.CoordinatorLayout>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:id="@+id/content3"
+        android:visibility="visible"
+        android:layout_weight="1">
+
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="500dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:background="#15FFFFFF"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+                <ImageButton
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="66dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toRightOf="@+id/mylife_touxiang"
+                    android:src="@drawable/settings"
+                    android:background="@drawable/settings"
+                    android:id="@+id/mylife_settings" />
+
+                <ImageView
+                    android:id="@+id/mylife_touxiang"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginLeft="128dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/touxiang" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="136dp"
+                    android:gravity="center"
+                    android:id="@+id/mylife_name"
+                    android:text=""
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/mylife_info"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="48dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="我的信息"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mylife_day"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="我的日程"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/mylife_code"
+                android:layout_width="260dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="我的小工具"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation" />
+
+</LinearLayout>
