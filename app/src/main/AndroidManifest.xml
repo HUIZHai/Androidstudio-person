@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hyl.personmangement">
+    package="com.example.hyl.person">
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
@@ -58,9 +58,9 @@
         <activity android:name=".Code"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Third_partylogin_Activity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+        <!--<activity android:name=".Third_partylogin_Activity"-->
+            <!--android:theme="@style/AppTheme.NoActionBar">-->
+        <!--</activity>-->
         <activity android:name=".kefu"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
@@ -78,6 +78,9 @@
         </activity>
         <receiver android:name=".CallAlarm" />
         <activity android:name=".AlarmAlert"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AlarmHelper"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
