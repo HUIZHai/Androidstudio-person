@@ -80,9 +80,7 @@
         <activity android:name=".AlarmAlert"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AlarmHelper"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
+
     </application>
 
 </manifest>

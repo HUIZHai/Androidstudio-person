@@ -4,9 +4,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/rs_background"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="140dp">
 
 
         <ImageView
@@ -14,18 +15,17 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_marginLeft="156dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/rs_touxiang" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="126dp"
+            android:layout_marginTop="110dp"
             android:gravity="center"
             android:text="注册"
             android:textColor="#FFFFFF"
-            android:textSize="20dp"
-            />
+            android:textSize="20dp" />
 
     </RelativeLayout>
     <RelativeLayout
@@ -118,7 +118,7 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:hint="请输入您的密码"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -149,7 +149,7 @@
             android:background="@drawable/circle"
             android:gravity="center"
             android:hint="请确认你的密码"
-            android:inputType="textPersonName"
+            android:inputType="textPassword"
             android:textSize="20dp" />
     </RelativeLayout>
 
@@ -240,35 +240,36 @@
             android:textSize="20dp" />
     </RelativeLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_marginTop="4dp">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
 
-        <!--<TextView-->
-            <!--android:id="@+id/text_age"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="32dp"-->
-            <!--android:layout_marginLeft="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:gravity="center"-->
-            <!--android:text="生日 :"-->
-            <!--android:textColor="#FFFFFF"-->
-            <!--android:textSize="20dp" />-->
+        <TextView
+            android:id="@+id/text_age"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="年龄 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-        <!--<EditText-->
-            <!--android:id="@+id/Age"-->
-            <!--android:layout_width="240dp"-->
-            <!--android:layout_height="32dp"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:layout_toRightOf="@+id/text_age"-->
-            <!--android:background="@drawable/circle"-->
-            <!--android:gravity="center"-->
-            <!--android:hint="请确认你的年纪"-->
-            <!--android:inputType="textPersonName"-->
-            <!--android:textSize="20dp" />-->
-    <!--</RelativeLayout>-->
+        <EditText
+            android:id="@+id/Age"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/text_age"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的年龄"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -301,35 +302,36 @@
             android:textSize="20dp" />
     </RelativeLayout>
 
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:layout_marginTop="4dp">-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="15dp">
 
-        <!--<TextView-->
-            <!--android:id="@+id/text_address"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="32dp"-->
-            <!--android:layout_marginLeft="8dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:gravity="center"-->
-            <!--android:text="地址 :"-->
-            <!--android:textColor="#FFFFFF"-->
-            <!--android:textSize="20dp" />-->
+        <TextView
+            android:id="@+id/text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="地址 :"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp" />
 
-        <!--<EditText-->
-            <!--android:id="@+id/address"-->
-            <!--android:layout_width="240dp"-->
-            <!--android:layout_height="32dp"-->
-            <!--android:layout_marginLeft="16dp"-->
-            <!--android:layout_marginTop="8dp"-->
-            <!--android:layout_toRightOf="@+id/text_address"-->
-            <!--android:background="@drawable/circle"-->
-            <!--android:gravity="center"-->
-            <!--android:hint="请确认你的地址"-->
-            <!--android:inputType="textPersonName"-->
-            <!--android:textSize="20dp" />-->
-    <!--</RelativeLayout>-->
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="240dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@+id/text_address"
+            android:background="@drawable/circle"
+            android:gravity="center"
+            android:hint="请确认你的地址"
+            android:inputType="textPersonName"
+            android:textSize="20dp" />
+    </RelativeLayout>
 
 
 

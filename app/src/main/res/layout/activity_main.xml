@@ -207,10 +207,10 @@
 
 
         <LinearLayout
-            android:layout_width="360dp"
-            android:layout_height="500dp"
+            android:layout_width="330dp"
+            android:layout_height="600dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:background="#15FFFFFF"
             android:orientation="vertical">
 
@@ -233,16 +233,16 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_marginLeft="128dp"
-                    android:layout_marginTop="40dp"
-                    android:src="@drawable/touxiang" />
+                    android:layout_marginTop="60dp"
+                    android:src="@drawable/usertouxiang" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="136dp"
+                    android:layout_marginTop="146dp"
                     android:gravity="center"
                     android:id="@+id/mylife_name"
-                    android:text=""
+                    android:text="hello,青峰大辉！"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
 
@@ -253,7 +253,7 @@
                 android:layout_width="260dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="48dp"
+                android:layout_marginTop="148dp"
                 android:background="@drawable/circle"
                 android:gravity="center"
                 android:text="我的信息"

@@ -10,10 +10,10 @@
 
     <LinearLayout
         android:id="@+id/login_view"
-        android:layout_width="360dp"
-        android:layout_height="500dp"
+        android:layout_width="330dp"
+        android:layout_height="600dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
         android:background="#15FFFFFF"
         android:orientation="vertical">
 
@@ -26,7 +26,7 @@
                 android:id="@+id/logo"
                 android:layout_width="90dp"
                 android:layout_height="90dp"
-                android:layout_marginLeft="128dp"
+                android:layout_marginLeft="118dp"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/touxiang" />
 
@@ -140,7 +140,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20px">
+            android:layout_marginTop="50px">
 
             <Button
                 android:id="@+id/login_weixin"
@@ -148,7 +148,7 @@
                 android:layout_height="60dp"
                 android:background="@drawable/login_weixin"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="40dp"/>
+                android:layout_marginLeft="20dp"/>
             <Button
                 android:id="@+id/login_qq"
                 android:layout_width="70dp"
@@ -161,14 +161,13 @@
 
             <Button
                 android:id="@+id/login_phone"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_alignParentBottom="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="2dp"
+                android:background="@drawable/login_phone"
+                android:layout_marginTop="12dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_toRightOf="@+id/login_qq"
-                android:background="@drawable/login_phone" />
+                android:layout_toRightOf="@+id/login_qq"/>
         </RelativeLayout>
 
 
