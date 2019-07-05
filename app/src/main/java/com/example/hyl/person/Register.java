@@ -1,6 +1,6 @@
 package com.example.hyl.person;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 
-public class Register extends AppCompatActivity {
+public class Register extends Activity {
 }

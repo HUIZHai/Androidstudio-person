@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.hyl.person" >
+    package="com.example.hyl.personmangement">
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainActivity" >
+        android:theme="@style/AppTheme">
+        <activity android:name=".AppStart"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +24,62 @@
         <activity android:name=".Register"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".MakeNotes"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".DayNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".MonthNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".YearNotesActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".EditNotes"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
+        <activity android:name=".NewActActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".EditScheduleActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".MyScheduleActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".InfomationActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Code"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".Third_partylogin_Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".kefu"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".settings"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".calc_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".change_pwd"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".weatherActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <receiver android:name=".CallAlarm" />
+        <activity android:name=".AlarmAlert"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
