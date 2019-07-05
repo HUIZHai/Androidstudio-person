@@ -144,9 +144,68 @@ public class MainActivity extends AppCompatActivity {
             daylist.setVisibility(View.GONE);
         }
 
+        //日程
+        calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                int monthTemp = month + 1;
+                String selectMonth;
+                if (monthTemp < 10)
+                    selectMonth = "0" + monthTemp;
+                else
+                    selectMonth = "" + monthTemp;
+                String selectDay;
+                if (dayOfMonth < 10)
+                    selectDay = "0" + dayOfMonth;
+                else
+                    selectDay = "" + dayOfMonth;
+                selectDate = year + "/" + selectMonth + "/" + selectDay;
+                daylist = (ListView) findViewById(R.id.day_schedule);
+                dayInfo = (TextView) findViewById(R.id.schedule_info);
+                if (hasSchedule(selectDate)) {
+                    dayInfo.setText("今日日程");
+                    daylist.setVisibility(View.VISIBLE);
+                    showSchedule(selectDate);
+                } else {
+                    dayInfo.setText("今日没有日程");
+                    daylist.setVisibility(View.GONE);
+                }
+            }
+        });
+
+
+        daylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                HashMap<String, Object> item = daylistItem.get(position);
+                String selectedTitle = item.get("ItemTitle").toString();
+                String selected[] = selectedTitle.split(":");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, EditScheduleActivity.class);
+                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                intent.putExtra("ScheduleID", selected[0]);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+                onResume();
+            }
+        });
+
+        addActicity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NewActActivity.class);
+                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                intent.putExtra("selectDate", selectDate);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+                // onResume();
+
+            }
+        });
     }
-    
-    
+
+
     public boolean hasSchedule(String date) {
         String sql = "select * from scheduletb where starttime  like '%" + date + "%'  and userID = " + userID;
         Cursor c = db2.rawQuery(sql, null);
