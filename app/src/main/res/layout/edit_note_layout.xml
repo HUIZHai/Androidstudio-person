@@ -23,7 +23,9 @@
                 android:src="@drawable/arrow_back"
                 android:id="@+id/edit_cancle"
                 android:background="#00000000"/>
+
             <TextView
+                android:id="@+id/schedule_title"
                 android:layout_width="216dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="12dp"
@@ -31,10 +33,9 @@
                 android:gravity="center"
                 android:paddingLeft="48dp"
                 android:text="修改收支"
-                android:textStyle="bold"
-                android:textSize="20sp"
                 android:textColor="#ffffff"
-                android:id="@+id/schedule_title"/>
+                android:textSize="20sp"
+                android:textStyle="bold" />
             <ImageButton
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -48,7 +49,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_marginTop="12dp"
-                android:layout_marginLeft="12dp"
+                android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/edit_delete"
                 android:src="@drawable/arrows_check"
                 android:id="@+id/edit_save"

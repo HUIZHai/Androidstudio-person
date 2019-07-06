@@ -145,17 +145,18 @@ public class MainActivity extends AppCompatActivity {
         }
 
         AlarmListen();
+        //记一笔
         makeNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, MakeNotes.class);
-                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
                 intent.putExtra("userID", userID);
                 startActivity(intent);
 
             }
         });
+        //今天、本月、本年记账
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

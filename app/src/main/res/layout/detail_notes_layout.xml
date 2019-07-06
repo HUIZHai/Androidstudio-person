@@ -16,6 +16,7 @@
             android:layout_width="300dp"
             android:layout_height="48dp"
             android:layout_weight="0.76"
+            android:layout_marginTop="10dp"
             android:hint="请输入查找内容"
             android:theme="@style/MyEditText"
             android:background="@drawable/editshape"
@@ -25,6 +26,7 @@
             android:id="@+id/search_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="16dp"
             android:background="@drawable/search" />
