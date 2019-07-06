@@ -1,4 +1,6 @@
 package com.example.hyl.person;
 
-public class musicActivity {
+import android.app.Activity;
+
+public class musicActivity extends Activity {
 }

@@ -76,6 +76,9 @@
         <activity android:name=".weatherActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".musicActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <receiver android:name=".CallAlarm" />
         <activity android:name=".AlarmAlert"
             android:label="@string/app_name"
