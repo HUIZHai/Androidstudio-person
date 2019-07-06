@@ -144,6 +144,96 @@ public class MainActivity extends AppCompatActivity {
             daylist.setVisibility(View.GONE);
         }
 
+        AlarmListen();
+        makeNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, MakeNotes.class);
+                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+
+            }
+        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0: {
+                        final Dialog progressDialog= new Dialog(MainActivity.this,R.style.progress_dialog);
+                        progressDialog.setContentView(R.layout.load_dialog);
+                        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                        TextView msg = (TextView) progressDialog.findViewById(R.id.id_tv_loadingmsg);
+                        msg.setText("疯狂加载中...");
+                        progressDialog.show();
+                        TimerTask finishTask = new TimerTask(){
+                            public void run(){
+                                //execute the task
+                                Intent intent = new Intent();
+                                intent.setClass(MainActivity.this, DayNotesActivity.class);
+                                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                                intent.putExtra("userID", userID);
+                                startActivity(intent);
+                                progressDialog.dismiss();
+                            }
+                        };
+                        Timer timer = new Timer();
+                        timer.schedule(finishTask , 2000);
+
+                    }
+                    break;
+                    case 1: {
+                        final Dialog progressDialog= new Dialog(MainActivity.this,R.style.progress_dialog);
+                        progressDialog.setContentView(R.layout.load_dialog);
+                        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                        TextView msg = (TextView) progressDialog.findViewById(R.id.id_tv_loadingmsg);
+                        msg.setText("疯狂加载中...");
+                        progressDialog.show();
+                        TimerTask finishTask = new TimerTask(){
+                            public void run(){
+                                //execute the task
+                                Intent intent = new Intent();
+                                intent.setClass(MainActivity.this, MonthNotesActivity.class);
+                                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                                intent.putExtra("userID", userID);
+                                startActivity(intent);
+                                progressDialog.dismiss();
+                            }
+                        };
+                        Timer timer = new Timer();
+                        timer.schedule(finishTask , 2000);
+
+                    }
+                    break;
+                    default: {final Dialog progressDialog= new Dialog(MainActivity.this,R.style.progress_dialog);
+                        progressDialog.setContentView(R.layout.load_dialog);
+                        progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+                        TextView msg = (TextView) progressDialog.findViewById(R.id.id_tv_loadingmsg);
+                        msg.setText("疯狂加载中...");
+                        progressDialog.show();
+                        TimerTask finishTask = new TimerTask(){
+                            public void run(){
+                                //execute the task
+
+                                Intent intent = new Intent();
+                                intent.setClass(MainActivity.this, YearNotesActivity.class);
+                                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                                intent.putExtra("userID", userID);
+                                startActivity(intent);
+                                progressDialog.dismiss();
+                            }
+                        };
+                        Timer timer = new Timer();
+                        timer.schedule(finishTask , 2000);
+
+                    }
+                    break;
+                }
+            }
+        });
+
+
         //日程
         calView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
@@ -203,8 +293,111 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        setMyName();
+        btn_infomation = (TextView) findViewById(R.id.mylife_info);
+        btn_infomation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("userID", userID);
+                intent.setClass(MainActivity.this, InfomationActivity.class);
+                startActivity(intent);
+                onResume();
+            }
+
+        });
+        btn_Schedule = (TextView) findViewById(R.id.mylife_day);
+        btn_Schedule.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent();
+                intent1.setClass(MainActivity.this, MyScheduleActivity.class);
+                intent1.putExtra("userID", userID);
+                startActivity(intent1);
+            }
+        });
+        mylife_settings = (ImageButton) findViewById(R.id.mylife_settings);
+        mylife_settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("userID", userID);
+                intent.setClass(MainActivity.this, settings.class);
+                startActivity(intent);
+                onResume();
+            }
+
+        });
+
+        btn_code = (TextView) findViewById(R.id.mylife_code);
+        btn_code.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent();
+                intent2.setClass(MainActivity.this, calc_activity.class);
+                startActivity(intent2);
+            }
+        });
+
     }
 
+    private void AlarmListen() {
+        String sql = "select * from scheduletb where beforetime  >= '" + getCurrentTime() + "' and isClick = 'false' and userID = " + userID +"  order by beforetime asc";
+        Cursor c = db2.rawQuery(sql, null);
+        if (c != null) {
+            int i = 0;
+            if (c.moveToNext()) {
+                scheduleID  = c.getInt(c.getColumnIndex("_id"));
+                scheduleNotes = c.getString(c.getColumnIndex("notes"));
+                scheduleTime = c.getString(c.getColumnIndex("beforetime"));
+                scheduleTitle = c.getString(c.getColumnIndex("title"));
+            }
+        }
+        if(scheduleTime!=null) {
+            try {
+                mCalendar = getStartCalandar(scheduleTime);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            mAlarmHelper.openAlarm(32, scheduleTitle, scheduleNotes, mCalendar.getTimeInMillis());
+        }
+    }
+
+    public void showDetails() {
+        list = (ListView) findViewById(R.id.in_outcome_list);
+        listItem = new ArrayList<HashMap<String, Object>>();
+        String[] title = {"今天", "本月", "本年"};
+        String[] time = {getTime(0), getTime(1), getTime(2)};
+        int picID[] = {R.drawable.day, R.drawable.month, R.drawable.year};
+        double money[] = {0.00, 0.00, 0.00};
+        for (int i = 0; i < 3; i++) {
+            String sql = "select * from moneytb where time  like '%" + getTime(i) + "%' and isDelete = 'false' and userID = " + userID;
+            Cursor c = db.rawQuery(sql, null);
+            if (c != null)
+                while (c.moveToNext()) {
+                    money[i] += c.getDouble(c.getColumnIndex("money"));
+                }
+        }
+        for (int i = 0; i < 3; i++) {
+            HashMap<String, Object> map = new HashMap<String, Object>();
+            map.put("ItemPic", picID[i]);
+            map.put("ItemTitle", title[i]);
+            map.put("ItemTime", time[i]);
+            map.put("ItemMoney", String.format("%.2f", money[i]));
+            listItem.add(map);
+        }
+
+
+        listItemAdapter = new SimpleAdapter(this, listItem,//数据源
+                R.layout.note_detail_item_layout,//ListItem的XML实现
+                //动态数组与ImageItem对应的子项
+                new String[]{"ItemPic", "ItemTitle", "ItemTime", "ItemMoney"},
+                //ImageItem的XML文件里面的一个ImageView,两个TextView ID
+                new int[]{R.id.note_pic, R.id.note_title, R.id.note_time, R.id.note_money}
+        );
+        list.setAdapter(listItemAdapter);
+
+    }
 
     public boolean hasSchedule(String date) {
         String sql = "select * from scheduletb where starttime  like '%" + date + "%'  and userID = " + userID;
@@ -305,6 +498,48 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void showMonthDetails() {
+        currentMonth.setText(getMonth() + "月");
+        //查询并设置本月收入
+        double income = 0, outcome = 0, balance = 0;
+        String sql = "select * from moneytb where time  like '%" + getTime(1) + "%' and isDelete = 'false' and money > 0 and userID = " + userID;
+        Cursor c = db.rawQuery(sql, null);
+        if (c != null)
+            while (c.moveToNext()) {
+                income += c.getDouble(c.getColumnIndex("money"));
+            }
+        mIncome.setText(String.format("%.2f", income));
+        //查询并设置本月支出
+        sql = "select * from moneytb where time  like '%" + getTime(1) + "%' and isDelete = 'false' and money < 0 and userID = " + userID;
+        c = db.rawQuery(sql, null);
+        if (c != null)
+            while (c.moveToNext()) {
+                outcome += c.getDouble(c.getColumnIndex("money"));
+            }
+        mOutcome.setText(String.format("%.2f", -1 * outcome));
+        //查询并设置本月余额（收入-支出）
+        sql = "select * from moneytb where time  like '%" + getTime(1) + "%' and isDelete = 'false' and userID = " + userID;
+        c = db.rawQuery(sql, null);
+        if (c != null)
+            while (c.moveToNext()) {
+                balance += c.getDouble(c.getColumnIndex("money"));
+            }
+        mBalance.setText(String.format("%.2f", balance));
+        if(balance>0) {
+            moneyPro.setProgress((int) (-100 * outcome / income));
+        }
+        else
+            moneyPro.setProgress(100);
+    }
+
+    protected void onResume() {
+        super.onResume();
+        showMonthDetails();
+        showDetails();
+        showSchedule(selectDate);
+        setMyName();
+        AlarmListen();
+    }
     
     private String getTime(int i) {
         SimpleDateFormat format;
@@ -317,6 +552,40 @@ public class MainActivity extends AppCompatActivity {
         Date curDate = new Date();
         String str = format.format(curDate);
         return str;
+    }
+
+    private String getCurrentTime() {
+        SimpleDateFormat format= new SimpleDateFormat("yyyy/MM/dd HH:ss");;
+        Date curDate = new Date();
+        String str = format.format(curDate);
+        return str;
+    }
+    public static Calendar getStartCalandar(String str) throws ParseException {
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        Date date= sdf.parse(str);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar;
+    }
+
+    private String getMonth() {
+        SimpleDateFormat format;
+        format = new SimpleDateFormat("MM");
+        Date curDate = new Date();
+        String str = format.format(curDate);
+        return str;
+    }
+
+    private void setMyName() {
+        db3 = openOrCreateDatabase("user_data", MODE_PRIVATE, null);
+        String sql = "select * from users_new where _id = '" + userID + "'";
+        Cursor cursor = db3.rawQuery(sql, null);
+        if (cursor != null) {
+            cursor.moveToNext();
+            String username = cursor.getString(cursor.getColumnIndex("user_name"));
+            mylife_name = (TextView) findViewById(R.id.mylife_name);
+            mylife_name.setText(username);
+        }
     }
 
 
