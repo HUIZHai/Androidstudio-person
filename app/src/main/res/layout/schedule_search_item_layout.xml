@@ -22,6 +22,7 @@
                 android:id="@+id/schedule_list_title"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="left"
                 android:text="今天"
                 android:textColor="#FFFFFF"

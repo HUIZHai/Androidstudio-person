@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:id="@+id/login_view"
-        android:layout_width="330dp"
+        android:layout_width="320dp"
         android:layout_height="600dp"
         android:layout_gravity="center"
         android:layout_marginLeft="20dp"
@@ -117,7 +117,7 @@
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/circle"
             android:gravity="center"
             android:onClick="finish_login"
@@ -130,7 +130,7 @@
             android:layout_width="200dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/circle"
             android:gravity="center"
             android:text="Register"
@@ -140,34 +140,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50px">
+            android:layout_marginTop="70px">
 
             <Button
                 android:id="@+id/login_weixin"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/login_weixin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="45dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"/>
+                android:background="@drawable/login_weixin" />
+
             <Button
                 android:id="@+id/login_qq"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/login_qq"
-                android:layout_marginTop="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
-                android:layout_toRightOf="@+id/login_weixin"/>
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@+id/login_weixin"
+                android:background="@drawable/login_qq" />
 
             <Button
                 android:id="@+id/login_phone"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginBottom="2dp"
-                android:background="@drawable/login_phone"
-                android:layout_marginTop="12dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="40dp"
-                android:layout_toRightOf="@+id/login_qq"/>
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="2dp"
+                android:layout_toRightOf="@+id/login_qq"
+                android:background="@drawable/login_phone" />
         </RelativeLayout>
 
 

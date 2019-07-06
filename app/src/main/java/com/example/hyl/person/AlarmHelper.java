@@ -19,6 +19,8 @@ public class AlarmHelper {
         Intent intent = new Intent();
         intent.setClass(c, CallAlarm.class);
         //等待的Intent
+
+        //避免了闹钟的覆盖
         PendingIntent pi = PendingIntent.getBroadcast(c, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);//更新之前PendingIntent的消息
         mAlarmManager.set(AlarmManager.RTC_WAKEUP, time, pi);//硬件闹钟，当闹钟发射时唤醒手机休眠；
     }

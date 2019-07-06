@@ -124,18 +124,52 @@
             android:layout_height="match_parent"
             android:entries="@array/sp_sex"
             android:layout_marginLeft="160dp">
-       </Spinner>
+        </Spinner>
         <!--<EditText-->
-            <!--android:id="@+id/exit_info_sex"-->
-            <!--android:textColor="@color/text_black"-->
-            <!--android:textSize="20dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:layout_marginLeft="100dp"-->
-            <!--android:layout_marginStart="80dp"-->
-            <!--android:layout_toEndOf="@+id/xingbie"-->
-            <!--android:layout_toRightOf="@+id/xingbie" />-->
+        <!--android:id="@+id/exit_info_sex"-->
+        <!--android:textColor="@color/text_black"-->
+        <!--android:textSize="20dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_marginLeft="100dp"-->
+        <!--android:layout_marginStart="80dp"-->
+        <!--android:layout_toEndOf="@+id/xingbie"-->
+        <!--android:layout_toRightOf="@+id/xingbie" />-->
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mylife_xiantiao2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/nianji"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     年纪"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+        <EditText
+            android:id="@+id/exit_info_age"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/nianji"
+            android:layout_toRightOf="@+id/nianji" />
 
     </RelativeLayout>
 
@@ -202,6 +236,39 @@
             android:layout_marginStart="80dp"
             android:layout_toEndOf="@+id/youxiang"
             android:layout_toRightOf="@+id/youxiang" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/mylife_xiantiao2" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/background_white">
+
+        <TextView
+            android:id="@+id/dizhi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="     地址"
+            android:textColor="@color/text_black"
+            android:textSize="24dp" />
+
+        <EditText
+            android:id="@+id/exit_info_address"
+            android:textColor="@color/text_black"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="100dp"
+            android:layout_marginStart="80dp"
+            android:layout_toEndOf="@+id/dizhi"
+            android:layout_toRightOf="@+id/dizhi" />
 
     </RelativeLayout>
 
