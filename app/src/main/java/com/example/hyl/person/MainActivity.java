@@ -1,11 +1,14 @@
 package com.example.hyl.person;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.icu.math.BigDecimal;
+import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Process;
@@ -14,6 +17,11 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.ActivityCompat;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
+import android.net.Uri;
+import java.io.File;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +31,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -39,7 +48,18 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import ArcProcess.ArcProgress;
+import imgutils.SpUtils;
+import imgutils.FileProvider7;
+import imgutils.PermissionsChecker;
+import imgutils.Utils;
 
+import static imgutils.Utils.DIR_IMAGE;
+import static imgutils.Utils.PERMISSIONS_STORAGE;
+import static imgutils.Utils.REQUEST_EXTERNAL_STORAGE;
+import static imgutils.Utils.SP_TEMP1;
+import static imgutils.Utils.startPhotoZoom;
+
+import android.provider.MediaStore;
 public class MainActivity extends AppCompatActivity {
     private Button makeNotes;
     private LinearLayout content1, content3;
@@ -63,6 +83,12 @@ public class MainActivity extends AppCompatActivity {
     TextView btn_code;
     private String userID;
     ImageButton mylife_settings;
+    ImageView mylife_touxiang;
+    protected static final int CHOOSE_PICTURE = 0;
+    protected static final int TAKE_PICTURE = 1;
+    private static final int CROP_SMALL_PICTURE = 2;
+    protected static Uri tempUri;
+
     private ArcProgress moneyPro;
     public static AlarmHelper mAlarmHelper;
     public static Calendar mCalendar;
@@ -317,6 +343,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent1);
             }
         });
+        mylife_touxiang=(ImageView) findViewById(R.id.mylife_touxiang);
+        mylife_touxiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PermissionsChecker mPermissionsChecker = new PermissionsChecker(MainActivity.this);
+                // 缺少权限时, 进入权限配置页面
+                if (mPermissionsChecker.lacksPermissions(PERMISSIONS_STORAGE)) {
+                    // We don't have permission so prompt the user
+                    ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS_STORAGE,
+                            REQUEST_EXTERNAL_STORAGE);
+                } else {
+                    showChoosePicDialog();
+                }
+
+            }
+
+        });
+
         mylife_settings = (ImageButton) findViewById(R.id.mylife_settings);
         mylife_settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -589,5 +633,104 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * 显示修改头像的对话框
+     */
+    protected void showChoosePicDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("设置头像");
+        String[] items = {"选择本地照片", "拍照"};
+        builder.setNegativeButton("取消", null);
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case CHOOSE_PICTURE: // 选择本地照片
+                        Intent openAlbumIntent = new Intent(
+                                Intent.ACTION_PICK);
+                        openAlbumIntent.setType("image/*");
+                        startActivityForResult(openAlbumIntent, CHOOSE_PICTURE);
+                        break;
+                    case TAKE_PICTURE: // 拍照
+                        Intent openCameraIntent = new Intent(
+                                MediaStore.ACTION_IMAGE_CAPTURE);
+                        tempUri = Uri.fromFile(new File(DIR_IMAGE, "image.jpg"));//Environment.getExternalStorageDirectory()
+                        // 指定照片保存路径（SD卡），image.jpg为一个临时文件，每次拍照后这个图片都会被替换
+                        openCameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, tempUri);
+                        startActivityForResult(openCameraIntent, TAKE_PICTURE);
+                        break;
+                }
+            }
+        });
+        builder.create().show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) { // 如果返回码是可以用的
+            switch (requestCode) {
+                case TAKE_PICTURE:
+                    if (tempUri == null) {
+                        Log.i("tag", "The uri is not exist.");
+                    }
+//                    tempUri = uri;
+//                    startPhotoZoom(tempUri); // 开始对图片进行裁剪处理
+                    startActivityForResult(startPhotoZoom(tempUri), CROP_SMALL_PICTURE);
+                    break;
+                case CHOOSE_PICTURE:
+//                    ActivityCompat.requestPermissions($.getActivity(),
+//                    new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
+
+                    if (data.getData() == null) {
+                        Log.i("tag", "The uri is not exist.");
+                    }
+                    tempUri = data.getData();
+//                    startPhotoZoom(data.getData()); // 开始对图片进行裁剪处理
+                    startActivityForResult(startPhotoZoom(data.getData()), CROP_SMALL_PICTURE);
+                    break;
+                case CROP_SMALL_PICTURE:
+                    if (data != null) {
+                        setImageToView(data); // 让刚才选择裁剪得到的图片显示在界面上
+                    }
+                    break;
+            }
+        }
+    }
+
+
+    /**
+     * 保存裁剪之后的图片数据
+     *
+     * @param
+     * @param data
+     */
+    protected void setImageToView(Intent data) {
+        Bundle extras = data.getExtras();
+        if (extras != null) {
+            Bitmap photo = extras.getParcelable("data");
+            photo = Utils.toRoundBitmap(photo, tempUri); // 这个时候的图片已经被处理成圆形的了
+            mylife_touxiang.setImageBitmap(photo);
+            uploadPic(photo);
+        }
+    }
+
+    private void uploadPic(Bitmap bitmap) {
+        // 上传至服务器
+        // ... 可以在这里把Bitmap转换成file，然后得到file的url，做文件上传操作
+        // 注意这里得到的图片已经是圆形图片了
+        // bitmap是没有做个圆形处理的，但已经被裁剪了
+
+        String imagePath = Utils.savePhoto(bitmap, DIR_IMAGE, String
+                .valueOf("geeklovewho"));//System.currentTimeMillis()
+        Log.e("imagePath", imagePath + "");
+        if (imagePath != null) {
+            // 拿着imagePath上传了
+            // ...
+            SpUtils.get(this).put(SP_TEMP1, imagePath);
+        }
+    }
 
 }
