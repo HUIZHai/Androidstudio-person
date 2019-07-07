@@ -291,6 +291,21 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+        addActicity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, NewActActivity.class);
+//                Intent intent=new Intent(IntentTest.this,MyActivity.class);
+                intent.putExtra("selectDate", selectDate);
+                intent.putExtra("userID", userID);
+                startActivity(intent);
+                // onResume();
+
+            }
+        });
         daylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -307,19 +322,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        addActicity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(MainActivity.this, NewActActivity.class);
-//                Intent intent=new Intent(IntentTest.this,MyActivity.class);
-                intent.putExtra("selectDate", selectDate);
-                intent.putExtra("userID", userID);
-                startActivity(intent);
-                // onResume();
 
-            }
-        });
         setMyName();
         btn_infomation = (TextView) findViewById(R.id.mylife_info);
         btn_infomation.setOnClickListener(new View.OnClickListener() {

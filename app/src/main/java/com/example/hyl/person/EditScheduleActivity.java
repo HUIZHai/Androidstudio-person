@@ -1,5 +1,6 @@
 package com.example.hyl.person;
 
+
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
@@ -30,9 +31,7 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by Roelin on 2017/7/6.
- */
+
 
 public class EditScheduleActivity  extends AppCompatActivity {
     private SQLiteDatabase db;
@@ -59,7 +58,7 @@ public class EditScheduleActivity  extends AppCompatActivity {
         list = (ListView)findViewById(R.id.day_schedule);
         db = openOrCreateDatabase("schedule.db", MODE_PRIVATE, null);
         db.execSQL("create table if not exists scheduletb (_id INTEGER PRIMARY KEY AUTOINCREMENT, starttime time not null , endtime time not null ," +
-                "userID text not null, title text not null, repeat text not null,befores text not null ,location text , notes text , isClick text , beforetime text not null)");
+                           "userID text not null, title text not null,repeat text not null, befores text not null ,location text , notes text , isClick text, beforetime text not null)");
         showDetails();
         String sql = "select * from scheduletb where _id = " + ScheduleID +" and userID = "+userID;
         Cursor c = db.rawQuery(sql, null);
@@ -68,7 +67,7 @@ public class EditScheduleActivity  extends AppCompatActivity {
                 String mStarttime = c.getString(c.getColumnIndex("starttime"));
                 String mEndtime = c.getString(c.getColumnIndex("endtime"));
                 String mTitle = c.getString(c.getColumnIndex("title"));
-                String mBefore = c.getString(c.getColumnIndex("before"));
+                String mBefore = c.getString(c.getColumnIndex("befores"));
                 String mRepeat = c.getString(c.getColumnIndex("repeat"));
                 String mLocation = c.getString(c.getColumnIndex("location"));
                 String mNotes = c.getString(c.getColumnIndex("notes"));
@@ -126,7 +125,7 @@ public class EditScheduleActivity  extends AppCompatActivity {
                 else {
                     String set = null;
                     try {
-                        set = "starttime= '" + notes[0]+" "+notes[1] + "', endtime='" +notes[2]+" "+notes[3] + "',repeat='" + notes[4] + "',before='" +notes[5]+"',title='" +editTitle+ "',location='" +editLoc+ "',notes='"+editNotes+"',beforetime='"+getBeforeTime( notes[0]+" "+notes[1],notes[5])+"',isClick = 'false'";
+                        set = "starttime= '" + notes[0]+" "+notes[1] + "', endtime='" +notes[2]+" "+notes[3] + "',repeat='" + notes[4] + "',befores='" +notes[5]+"',title='" +editTitle+ "',location='" +editLoc+ "',notes='"+editNotes+"',beforetime='"+getBeforeTime( notes[0]+" "+notes[1],notes[5])+"',isClick = 'false'";
                     } catch (ParseException e) {
                         e.printStackTrace();
                     }
@@ -517,5 +516,4 @@ public class EditScheduleActivity  extends AppCompatActivity {
         showDetails();
     }
 }
-
 
