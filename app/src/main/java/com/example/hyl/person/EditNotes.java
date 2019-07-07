@@ -25,9 +25,7 @@ import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by Roelin on 2017/7/2.
- */
+
 
 public class EditNotes extends AppCompatActivity {
     private SQLiteDatabase db;

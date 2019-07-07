@@ -312,7 +312,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, NewActActivity.class);
-                //Intent intent=new Intent(IntentTest.this,MyActivity.class);
+//                Intent intent=new Intent(IntentTest.this,MyActivity.class);
                 intent.putExtra("selectDate", selectDate);
                 intent.putExtra("userID", userID);
                 startActivity(intent);

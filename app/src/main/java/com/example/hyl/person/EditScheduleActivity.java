@@ -30,6 +30,9 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * Created by Roelin on 2017/7/6.
+ */
 
 public class EditScheduleActivity  extends AppCompatActivity {
     private SQLiteDatabase db;

@@ -1,6 +1,5 @@
 package com.example.hyl.person;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -20,6 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+
 
 
 public class MyScheduleActivity extends AppCompatActivity {

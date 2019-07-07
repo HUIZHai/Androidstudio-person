@@ -89,7 +89,7 @@ public class DayNotesActivity extends AppCompatActivity {
                 HashMap<String,Object> map =new HashMap<String,Object>();
                 Double money = c.getDouble(c.getColumnIndex("money"));
                 String time = c.getString(c.getColumnIndex("time"));
-                int picID = R.drawable.in;
+                int picID = R.drawable.income;
                 if(money<0) {
                     picID = R.drawable.shop;
                 }
